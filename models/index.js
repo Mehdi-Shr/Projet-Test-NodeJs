@@ -10,7 +10,7 @@ const api = axios.create({
 module.exports = {
     api,
     createModelFor: (collectionName, otherActions) => ({
-        get: async (id, callback) => {
+        get: async (id) => {
             const {data} = await api.get(`/${collectionName}/${id}`)
             return data
         },

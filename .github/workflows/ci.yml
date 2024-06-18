@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run linterZ
+      - name: Run linter
         run: npm run lint
 
       - name: Run tests
