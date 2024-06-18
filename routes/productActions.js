@@ -8,26 +8,25 @@ module.exports = {
         const product = await productModel.get(id);
         return res.json(product);
       } catch (e) {
-        console.log(e)
+        console.log(e);
         return res.status(400).json({ message: "Le produit n'existe pas" });
       }
     }
-    return res
-      .status(400)
-      .json({ message: "Veuillez renseigner l'id du produit" });
+    return res.status(400).json({ message: "Veuillez renseigner l'id du produit" });
   },
-  async getAll(res) {
+  
+  async getAll(req, res) { // Modifier getAll pour accepter req et res
     try {
       const products = await productModel.getAll();
       return res.json(products);
     } catch (e) {
       console.log(e);
       return res.status(400).json({
-        message:
-          "Nous ne parvenons pas à récupérer la liste de produit, veuillez reéssayer ulterieurement",
+        message: "Nous ne parvenons pas à récupérer la liste de produit, veuillez réessayer ultérieurement",
       });
     }
   },
+
   async update(req, res) {
     const { id } = req.params;
     if (id) {
@@ -73,10 +72,9 @@ module.exports = {
           "Il manque certaines propriétés pour modifier le produit (marque, volume, type, prix, source, description, typeBouchon)",
       });
     }
-    return res
-      .status(400)
-      .json({ message: "Veuillez renseigner l'id du produit" });
+    return res.status(400).json({ message: "Veuillez renseigner l'id du produit" });
   },
+
   async create(req, res) {
     const {
       marque,
@@ -112,10 +110,10 @@ module.exports = {
         });
         return res.json(newProduct);
       } catch (e) {
-        console.log(e)
+        console.log(e);
         return res.status(400).json({
           message:
-            "Nous ne parvenons pas à créer le produit, veuillez reéssayer ulterieurement",
+            "Nous ne parvenons pas à créer le produit, veuillez réessayer ultérieurement",
         });
       }
     }
@@ -124,6 +122,7 @@ module.exports = {
         "Il manque certaines propriétés pour créer le produit (marque, image, volume, type, prix, source, description, typeBouchon)",
     });
   },
+
   async delete(req, res) {
     const { id } = req.params;
     if (id) {
@@ -135,8 +134,6 @@ module.exports = {
         return res.status(500).json({ message: "Le produit n'existe pas" });
       }
     }
-    return res
-      .status(400)
-      .json({ message: "Veuillez renseigner l'id du produit" });
+    return res.status(400).json({ message: "Veuillez renseigner l'id du produit" });
   },
 };

@@ -1,3 +1,3 @@
-const {createModelFor} = require("./index");
+const { createModelFor } = require("./index");
 
-module.exports = createModelFor`products`
+module.exports = createModelFor("products");
