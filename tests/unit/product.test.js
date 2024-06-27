@@ -1,5 +1,5 @@
-const productModel = require("../models/product");
-const { api } = require("../models/index");
+const productModel = require("../../models/product");
+const { api } = require("../../models/index");
 const MockAdapter = require("axios-mock-adapter");
 
 describe("Product Model", () => {

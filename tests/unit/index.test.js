@@ -1,4 +1,4 @@
-const { api } = require('../models/index');
+const { api } = require('../../models/index');
 
 describe('API Configuration', () => {
     it('should have correct base URL and headers', () => {

@@ -1,5 +1,5 @@
-const userModel = require("../models/user");
-const { api } = require("../models/index");
+const userModel = require("../../models/user");
+const { api } = require("../../models/index");
 const MockAdapter = require("axios-mock-adapter");
 
 describe("User Model", () => {
