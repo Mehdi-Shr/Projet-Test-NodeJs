@@ -30,7 +30,7 @@ describe("Product Model", () => {
     test("should get all products", async () => {
         mock.onGet(`/${collectionName}`).reply(200, [testData]);
 
-        const data = await productModel.getAll();
+        const data = await productModel.getAll(); 
         expect(data).toEqual([testData]);
     });
 
